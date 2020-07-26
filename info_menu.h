@@ -1,3 +1,6 @@
+/* Klasa reprezentujaca proste menu inofrmacyjne z wykorzystaniem biblioteki ncurses. Ogranicza ona korzysci wynikajace z dziedziczenia 
+   po klasie 'Menu', udostepniajac jedynie opcje powrotu do poprzedniej strony menu. Wyswietla tekst o charakterze informacyjnym. */
+
 #ifndef INFO_MENU_H 
 #define INFO_MENU_H 
 

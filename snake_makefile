@@ -1,0 +1,21 @@
+#Makefile dla programu "Snake"
+
+all: snake clean
+
+snake: main.o menu.o color_menu.o info_menu.o
+	g++ -o snake main.o menu.o color_menu.o info_menu.o -lncurses
+
+main.o: main.cpp menu.h color_menu.h info_menu.h
+	g++ -c main.cpp -lncurses
+
+menu.o: menu.cpp
+	g++ -c menu.cpp -lncurses
+
+color_menu.o: color_menu.cpp menu.h
+	g++ -c color_menu.cpp -lncurses
+
+info_menu.o: info_menu.cpp menu.h
+	g++ -c info_menu.cpp -lncurses
+
+clean:
+	@rm -f *.o *~
