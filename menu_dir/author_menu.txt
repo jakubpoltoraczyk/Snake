@@ -1,0 +1,6 @@
+0AUTORSTWO
+0
+1Powrot
+0
+0Autorem gry jest Jakub Półtoraczyk.
+0Obecnie udostepniona jest wersja gry Snake 1.0 z dnia 26.07.20

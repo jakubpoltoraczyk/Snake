@@ -1,0 +1,6 @@
+0Wielkosc mapy
+0
+3Mala
+3Srednia
+3Duza
+1Powrot

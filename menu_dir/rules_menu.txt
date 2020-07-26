@@ -1,0 +1,7 @@
+0ZASADY GRY
+0
+1Powrot
+0
+0Gra jest odzwierciedleniem popularnej produkcji "snake". 
+0Celem gry jest utrzymanie sie jak najdluzej przy zyciu, 
+0w czasie gdy poruszane przez nas waz rosnie.

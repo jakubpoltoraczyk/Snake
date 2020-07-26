@@ -1,0 +1,7 @@
+0MENU GLOWNE
+0
+2Zagraj
+3Zasady Gry
+4Opcje
+5Autorstwo
+1Wyjscie

@@ -1,0 +1,6 @@
+0Tempo gry
+0
+3Wolne
+3Srednie
+3Szybkie
+1Powrot

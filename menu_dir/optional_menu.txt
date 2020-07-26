@@ -1,0 +1,5 @@
+0MENU OPCJI
+0
+3Tempo gry
+4Wielkosc mapy
+1Powrot
