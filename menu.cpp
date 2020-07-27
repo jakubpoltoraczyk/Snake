@@ -31,14 +31,14 @@ void Menu::change_actual(int c)
 
 void Menu::draw_frame()const
 {
-    mvhline(lin/2-1,col/2-lngst_name/2-2,ACS_HLINE,lngst_name+3);
-    mvhline(lin/2+name_tab.size(),col/2-lngst_name/2-2,ACS_HLINE,lngst_name+3);
-    mvvline(lin/2,col/2-lngst_name/2-3,ACS_VLINE,name_tab.size());
-    mvvline(lin/2,col/2+lngst_name/2+1,ACS_VLINE,name_tab.size());
-    mvhline(lin/2-1,col/2-lngst_name/2-3,ACS_ULCORNER,1);
-    mvhline(lin/2+name_tab.size(),col/2-lngst_name/2-3,ACS_LLCORNER,1);
-    mvvline(lin/2-1,col/2+lngst_name/2+1,ACS_URCORNER,1);
-    mvvline(lin/2+name_tab.size(),col/2+lngst_name/2+1,ACS_LRCORNER,1);
+    mvhline(lin/2-2,col/2-lngst_name/2-3,ACS_HLINE,lngst_name+5);
+    mvhline(lin/2+name_tab.size()+1,col/2-lngst_name/2-3,ACS_HLINE,lngst_name+5);
+    mvvline(lin/2-1,col/2-lngst_name/2-4,ACS_VLINE,name_tab.size()+2);
+    mvvline(lin/2-1,col/2+lngst_name/2+2,ACS_VLINE,name_tab.size()+2);
+    mvhline(lin/2-2,col/2-lngst_name/2-4,ACS_ULCORNER,1);
+    mvhline(lin/2+name_tab.size()+1,col/2-lngst_name/2-4,ACS_LLCORNER,1);
+    mvvline(lin/2-2,col/2+lngst_name/2+2,ACS_URCORNER,1);
+    mvvline(lin/2+name_tab.size()+1,col/2+lngst_name/2+2,ACS_LRCORNER,1);
 }
 
 void Menu::show()const
