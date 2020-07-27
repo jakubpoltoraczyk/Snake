@@ -1,5 +1,13 @@
 0MENU OPCJI
 0
 3Tempo gry
-4Wielkosc mapy
+4Rozmiar mapy
+5Jezyk
 1Powrot
+~
+0OPTIONS
+0
+3Game speed
+4Map size
+5Languages
+1Back

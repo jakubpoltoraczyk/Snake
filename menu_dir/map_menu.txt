@@ -1,6 +1,13 @@
-0Wielkosc mapy
+0ROZMIAR MAPY
 0
 3Mala
-3Srednia
-3Duza
+4Srednia
+5Duza
 1Powrot
+~
+0MAP SIZE
+0
+0Small
+4Medium
+5Big
+1Back

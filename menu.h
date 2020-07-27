@@ -8,12 +8,21 @@
 #include <fstream>
 #include <vector>
 
+enum language // typ wyliczeniowy sluzacy do wyboru jezyka menu
+{
+    POL = 0,
+    ENG = 1
+};
+
 class Menu
 {
     protected:
-        int act_num, lngst_name, lin, col; // 1.aktualnie wybrana pozycja, 2.dlugosc najdluzszej nazwy, 3.numer lini na ekranie (wyswietlanie), 4.numer kolumny na ekranie (wyswietlanie)
-        std::vector<std::string> name_tab; // tabela nazw opcji menu (czytane z pliku)
+        int act_num, lines, columns; // 1.aktualnie wybrana pozycja, 2.numer lini na ekranie (wyswietlanie), 3.numer kolumny na ekranie (wyswietlanie)
+        std::vector<int> lngst_name; // przechowywanie najdluzszej nazwy w kazdym jezyku
+        std::vector<std::vector<std::string>> name_tab; // tabela nazw opcji menu (czytane z pliku)
         std::vector<int> opt_tab; // tabela opcji/dzialan (niewidoczne dla uzytkownika, czytane z pliku np. 0-brak dzialania, 1-wyjscie/powrot, 2-gra, 3 i wiecej-rozne dzialania )
+        static language lang; // zmienna do przechowywania jezyka menu
+        static void change_lang(int c); // metoda zmieniajaca obecny jezyk
         void change_actual(int c); // metoda zmieniajaca wartosc act_num
         void draw_frame()const; // metoda rysujaca ramke otaczajca menu
     public:

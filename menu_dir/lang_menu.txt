@@ -1,0 +1,11 @@
+9JEZYK
+0
+3Polski
+4Angielski
+1Powrot
+~
+9LANGUAGE
+0
+3Polish
+4English
+1Back

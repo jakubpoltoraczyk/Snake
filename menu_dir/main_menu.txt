@@ -5,3 +5,11 @@
 4Opcje
 5Autorstwo
 1Wyjscie
+~
+0MAIN MENU
+0 
+2Play
+3Game rules
+4Options
+5Author
+1Exit 

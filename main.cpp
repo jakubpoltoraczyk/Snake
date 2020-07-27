@@ -10,7 +10,7 @@ int main()
     curs_set(0);
     start_color();
     Menu main_menu("menu_dir/main_menu.txt"), opt_menu("menu_dir/optional_menu.txt");
-    Color_menu speed_menu("menu_dir/speed_menu.txt"), map_menu("menu_dir/map_menu.txt");
+    Color_menu speed_menu("menu_dir/speed_menu.txt"), map_menu("menu_dir/map_menu.txt"), lang_menu("menu_dir/lang_menu.txt");
     Info_menu rules_menu("menu_dir/rules_menu.txt"), author_menu("menu_dir/author_menu.txt");
     int option;
     do
@@ -45,6 +45,12 @@ int main()
                     {
                         map_menu.show();
                         option = map_menu.choose_option(getch());
+                    }while(option!=1); option = 0; break;
+                    case 5:
+                    do
+                    {
+                        lang_menu.show();
+                        option = lang_menu.choose_option(getch());
                     }while(option!=1); option = 0; break;
                 }
             }while(option!=1); option = 0; break;
