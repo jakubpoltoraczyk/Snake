@@ -8,7 +8,7 @@
 
 class Color_menu: public Menu // dziedziczy po podstawowym menu
 {
-    protected:
+    private:
         int extra_number; // przechowuje obecnie wybrana opcje przez uzytkownika
     public:
         Color_menu(const std::string & filename): Menu(filename), extra_number(2) {}

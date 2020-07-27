@@ -1,9 +1,9 @@
 0MENU GLOWNE
 0
 2Zagraj
-3Zasady Gry
+3Zasady gry
 4Opcje
-5Autorstwo
+5Prawa autorskie
 1Wyjscie
 ~
 0MAIN MENU
@@ -11,5 +11,5 @@
 2Play
 3Game rules
 4Options
-5Author
+5Authors' rights
 1Exit 

@@ -1,8 +1,8 @@
 #include "menu.h"
 
-language Menu::lang = POL;
+Language Menu::lang = POL;
 
-void Menu::change_lang(int c)
+void Menu::change_language(int c)
 {
     switch(c)
     {
@@ -13,26 +13,24 @@ void Menu::change_lang(int c)
     }
 }
 
-Menu::Menu(const std::string & filename): act_num(2), lines(), columns(), name_tab(2), lngst_name(2)
+Menu::Menu(const std::string & filename): act_num(2), lines(), columns(), name_tab(number_of_languages)
 {
     std::ifstream file;
     std::string name;
     int opt;
     file.open(filename);
-    for(int i=0;!file.eof();++i)
+    while(!file.eof())
     {
         if(file.peek()=='~')
         {
             file.get();
-            lang=language(lang+1);
+            lang=Language(lang+1);
         }
         file >> opt;
         opt_tab.push_back(opt);
         getline(file,name);
         name+="\n";
         name_tab[lang].push_back(name);
-        if(name.size()>lngst_name[lang])
-            lngst_name[lang]=name.size();
     }
     getmaxyx(stdscr,lines,columns);
     lines-=2*name_tab.size(); // kwestia estetyki
@@ -50,14 +48,14 @@ void Menu::change_actual(int c)
 
 void Menu::draw_frame()const
 {
-    mvhline(lines/2-2,columns/2-lngst_name[lang]/2-3,ACS_HLINE,lngst_name[lang]+5);
-    mvhline(lines/2+name_tab[lang].size()+1,columns/2-lngst_name[lang]/2-3,ACS_HLINE,lngst_name[lang]+5);
-    mvvline(lines/2-1,columns/2-lngst_name[lang]/2-4,ACS_VLINE,name_tab[lang].size()+2);
-    mvvline(lines/2-1,columns/2+lngst_name[lang]/2+2,ACS_VLINE,name_tab[lang].size()+2);
-    mvhline(lines/2-2,columns/2-lngst_name[lang]/2-4,ACS_ULCORNER,1);
-    mvhline(lines/2+name_tab[lang].size()+1,columns/2-lngst_name[lang]/2-4,ACS_LLCORNER,1);
-    mvvline(lines/2-2,columns/2+lngst_name[lang]/2+2,ACS_URCORNER,1);
-    mvvline(lines/2+name_tab[lang].size()+1,columns/2+lngst_name[lang]/2+2,ACS_LRCORNER,1);
+    mvhline(lines/2-2,columns/2-12,ACS_HLINE,22);
+    mvhline(lines/2+8,columns/2-12,ACS_HLINE,22);
+    mvvline(lines/2-1,columns/2-12,ACS_VLINE,9);
+    mvvline(lines/2-1,columns/2+10,ACS_VLINE,9);
+    mvhline(lines/2-2,columns/2-12,ACS_ULCORNER,1);
+    mvhline(lines/2+8,columns/2-12,ACS_LLCORNER,1);
+    mvvline(lines/2-2,columns/2+10,ACS_URCORNER,1);
+    mvvline(lines/2+8,columns/2+10,ACS_LRCORNER,1);
 }
 
 void Menu::show()const

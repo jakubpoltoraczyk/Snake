@@ -41,10 +41,10 @@ int Color_menu::choose_option(int c)
 {
     if(c==10)
     {
-        if(act_num>1&&act_num!=name_tab[lang].size()-1)
+        if(act_num!=name_tab[lang].size()-1)
             extra_number=act_num;
         if(opt_tab[0]==9)
-            Menu::change_lang(opt_tab[act_num]);
+            Menu::change_language(opt_tab[extra_number]);
         return opt_tab[act_num];
     }
     if(c==KEY_DOWN||c==KEY_UP)

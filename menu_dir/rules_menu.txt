@@ -10,4 +10,6 @@
 0
 1Back
 0
-0Game title is snake.
+0Gra jest odzwierciedleniem popularnej produkcji "snake". 
+0Celem gry jest utrzymanie sie jak najdluzej przy zyciu, 
+0w czasie gdy poruszane przez nas waz rosnie.

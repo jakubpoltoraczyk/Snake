@@ -1,8 +1,8 @@
-0MENU OPCJI
+0Opcje
 0
 3Tempo gry
 4Rozmiar mapy
-5Jezyk
+5Jezyki
 1Powrot
 ~
 0OPTIONS
