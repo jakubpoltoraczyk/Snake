@@ -2,8 +2,8 @@
 
 all: snake clean
 
-snake: main.o menu.o color_menu.o info_menu.o
-	g++ -o snake main.o menu.o color_menu.o info_menu.o -lncurses
+snake: main.o menu.o color_menu.o info_menu.o snake.o
+	g++ -o snake main.o menu.o color_menu.o info_menu.o snake.o -lncurses
 
 main.o: main.cpp menu.h color_menu.h info_menu.h
 	g++ -c main.cpp -lncurses
@@ -16,6 +16,9 @@ color_menu.o: color_menu.cpp menu.h
 
 info_menu.o: info_menu.cpp menu.h
 	g++ -c info_menu.cpp -lncurses
+
+snake.o: snake.cpp snake.h
+	g++ -c snake.cpp -lncurses
 
 clean:
 	@rm -f *.o *~

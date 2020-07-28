@@ -1,6 +1,7 @@
 #include "menu.h"
 #include "color_menu.h"
 #include "info_menu.h"
+#include "snake.h"
 
 int main()
 {
@@ -12,7 +13,8 @@ int main()
     Menu main_menu("menu_dir/main_menu.txt"), opt_menu("menu_dir/optional_menu.txt");
     Color_menu speed_menu("menu_dir/speed_menu.txt"), map_menu("menu_dir/map_menu.txt"), lang_menu("menu_dir/lang_menu.txt");
     Info_menu rules_menu("menu_dir/rules_menu.txt"), author_menu("menu_dir/author_menu.txt");
-    int option;
+    Snake snake(1);
+    int option, map_size;
     do
     {
         main_menu.show();
@@ -20,7 +22,31 @@ int main()
         switch(option)
         {
             case 2:
-                break;
+            snake.show();
+            option = getch();
+            snake.move(option);
+            nodelay(stdscr,TRUE);
+            do
+            {
+                snake.show();
+                switch(getch())
+                {
+                    case KEY_UP:
+                        option = snake.move(KEY_UP); break;
+                    case KEY_DOWN:
+                        option = snake.move(KEY_DOWN); break;
+                    case KEY_LEFT:
+                        option = snake.move(KEY_LEFT); break;
+                    case KEY_RIGHT:
+                        option = snake.move(KEY_RIGHT); break;
+                    case 'e':
+                        option = 'e'; break;
+                    default:
+                        snake.move(option);
+                }
+                napms(300);                     
+            }while(option!='e'); option = 0; break;
+            nodelay(stdscr,FALSE);
             case 3:
             do
             {
