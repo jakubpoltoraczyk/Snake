@@ -9,11 +9,11 @@
 class Info_menu: public Menu
 {
     protected:
-        std::vector<int> lngst_name;
-        virtual void draw_frame()const override;
+        std::vector<int> lngst_name; // zmienna przechowujaca najdluzsza linie tekstu
+        virtual void draw_frame()const override; // ramka dostosowana do rozmiaru lngst_name
     public:
         Info_menu(const std::string & filename);
-        virtual int choose_option(int c)override;
+        virtual int choose_option(int c)override; // mozliwy jedynie powrot do poprzedniej strony
 };
 
 #endif // INFO_MENU_H 

@@ -19,7 +19,7 @@ class Menu
     protected:
         int act_num, lines, columns; // 1.aktualnie wybrana pozycja, 2.numer lini na ekranie (wyswietlanie), 3.numer kolumny na ekranie (wyswietlanie)
         static Language lang; // zmienna do przechowywania jezyka menu
-        const static int number_of_languages = 2;
+        const static int number_of_languages = 2; // stala przechowujaca liczbe dostepnych jezykow
         std::vector<std::vector<std::string>> name_tab; // tabela nazw opcji menu (czytane z pliku)
         std::vector<int> opt_tab; // tabela opcji/dzialan (niewidoczne dla uzytkownika, czytane z pliku np. 0-brak dzialania, 1-wyjscie/powrot, 2-gra, 3 i wiecej-rozne dzialania)
         static void change_language(int c); // metoda zmieniajaca obecny jezyk
