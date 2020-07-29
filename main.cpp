@@ -42,11 +42,11 @@ int main()
                     case 'e':
                         option = 'e'; break;
                     default:
-                        snake.move(option);
+                        option = snake.move(option);
                 }
-                napms(300);                     
-            }while(option!='e'); option = 0; break;
-            nodelay(stdscr,FALSE);
+                napms(300);
+            }while(option!='e'); option = 0;
+            nodelay(stdscr,FALSE); break;
             case 3:
             do
             {

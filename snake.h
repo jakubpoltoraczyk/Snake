@@ -12,6 +12,7 @@ class Snake
         std::vector<std::vector<int>> tab;
         int look_for_tail()const;
         void move_tail(int c);
+        int next_step(int c)const;
     public:
         Snake(int map_size);
         void show()const;

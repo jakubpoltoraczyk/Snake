@@ -53,7 +53,7 @@ void Snake::show()const
                 case 1: 
                 mvprintw(lines/2+i,columns/2+j,"o"); break;
                 case 2: 
-                mvprintw(lines/2+i,columns/2+j,"--"); break;
+                mvprintw(lines/2+i,columns/2+j,"-"); break;
                 case 3:
                 mvhline(lines/2+i,columns/2+j,ACS_HLINE,1); break;
                 case 4:
@@ -74,24 +74,50 @@ void Snake::show()const
 
 int Snake::move(int c)
 {
+    int next_element;
     switch(c)
     {
         case KEY_UP:
-        tab[x1][y1] = 2;
-        tab[--x1][y1] = 1;
-        move_tail(look_for_tail()); break;
+        next_element = next_step(KEY_UP);
+        if(next_element<2||next_element>5)
+        {
+            tab[x1][y1] = 2;
+            tab[--x1][y1] = 1;
+            move_tail(look_for_tail());
+            return c;
+        }
+        return 'e';
         case KEY_DOWN:
-        tab[x1][y1] = 2;
-        tab[++x1][y1] = 1;
-        move_tail(look_for_tail()); break;
+        next_element = next_step(KEY_DOWN);
+        if(next_element<2||next_element>5)
+        {
+            tab[x1][y1] = 2;
+            tab[++x1][y1] = 1;
+            move_tail(look_for_tail());
+            return c;
+        }
+        return 'e';
         case KEY_LEFT:
-        tab[x1][y1] = 2;
-        tab[x1][--y1] = 1;
-        move_tail(look_for_tail()); break;
+        next_element = next_step(KEY_LEFT);
+        if(next_element<2||next_element>5)
+        {
+            tab[x1][y1] = 2;
+            tab[x1][--y1] = 1;
+            move_tail(look_for_tail());
+            return c;
+        }
+
+        return 'e';
         case KEY_RIGHT:
-        tab[x1][y1] = 2;
-        tab[x1][++y1] = 1;
-        move_tail(look_for_tail()); break;
+        next_element = next_step(KEY_RIGHT);
+        if(next_element<2||next_element>5)
+        {
+            tab[x1][y1] = 2;
+            tab[x1][++y1] = 1;
+            move_tail(look_for_tail());
+            return c;
+        }
+        return 'e';
     }
     return c;
 }
@@ -126,4 +152,19 @@ void Snake::move_tail(int c)
         tab[x2][y2] = 0;
         tab[x2][++y2] = 2; break;
     } 
+}
+
+int Snake::next_step(int c)const
+{
+    switch(c)
+    {
+        case KEY_UP:
+        return tab[x1-1][y1]; 
+        case KEY_DOWN:
+        return tab[x1+1][y1];
+        case KEY_LEFT:
+        return tab[x1][y1-1];
+        case KEY_RIGHT:
+        return tab[x1][y1+1];
+    }
 }
