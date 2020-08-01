@@ -7,9 +7,9 @@ void Menu::change_language(int c)
     switch(c)
     {
         case 3:
-        lang = POL; break;
-        case 4:
         lang = ENG; break;
+        case 4:
+        lang = POL; break;
     }
 }
 

@@ -1,13 +1,13 @@
 0ROZMIAR MAPY
 0
-3Mala
-4Srednia
-5Duza
+3Mala (x3)
+4Srednia (x2)
+5Duza (x1)
 1Powrot
 ~
 0MAP SIZE
 0
-0Small
-4Medium
-5Big
+0Small (x3)
+4Medium (x2)
+5Big (x1)
 1Back

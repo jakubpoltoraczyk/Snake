@@ -1,0 +1,11 @@
+0WYNIK
+0
+1Kontynuuj
+0
+0Twoj wynik to: 
+~
+0RESULT
+0
+1Continue
+0
+0Your result is:

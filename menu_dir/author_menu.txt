@@ -3,11 +3,11 @@
 1Powrot
 0
 0Autorem gry jest Jakub Poltoraczyk.
-0Obecnie udostepniona jest wersja Snake 1.0 z dnia 27.07.20.
+0Obecnie udostepniona jest wersja Snake 1.0 demo z dnia 01.08.20.
 ~
 0Author
 0
 1Back
 0
 0Author of the game is Jakub Poltoraczyk.
-0Currently version is Snake 1.0 of 27.07.20.
+0Currently version is Snake 1.0 demo of 01.08.20.

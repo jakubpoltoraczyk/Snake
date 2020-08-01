@@ -11,7 +11,7 @@ class Color_menu: public Menu // dziedziczy po podstawowym menu
     private:
         int extra_number; // przechowuje obecnie wybrana opcje przez uzytkownika
     public:
-        Color_menu(const std::string & filename): Menu(filename), extra_number(2) {}
+        Color_menu(const std::string & filename): Menu(filename), extra_number(3) {}
         virtual int choose_option(int c) override; // dodatkowe aktualizowanie extra_number
         virtual void show()const override; // dodanie kolorkow
 };

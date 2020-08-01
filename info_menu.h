@@ -5,6 +5,7 @@
 #define INFO_MENU_H 
 
 #include "menu.h"
+#include <fstream>
 
 class Info_menu: public Menu
 {
@@ -14,6 +15,7 @@ class Info_menu: public Menu
     public:
         Info_menu(const std::string & filename);
         virtual int choose_option(int c)override; // mozliwy jedynie powrot do poprzedniej strony
+        void operator+=(const std::string & mes);
 };
 
 #endif // INFO_MENU_H 

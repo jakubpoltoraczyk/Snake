@@ -1,11 +1,13 @@
 9JEZYKI
 0
-3Polski
-4Angielski
+3Angielski
+4Polski
+5Niemiecki (wkrotce)
 1Powrot
 ~
 9LANGUAGE
 0
-3Polish
-4English
+3English
+4Polish
+5Germany (soon)
 1Back

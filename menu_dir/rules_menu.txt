@@ -2,14 +2,27 @@
 0
 1Powrot
 0
-0Gra jest odzwierciedleniem popularnej produkcji "snake". 
-0Celem gry jest utrzymanie sie jak najdluzej przy zyciu, 
-0w czasie gdy poruszane przez nas waz rosnie.
+0Gra jest odzwierciedleniem popularnej produkcji pt "Snake".
+0W grze poruszamy sie wezem, ktory zjada wszystko, co znajduje sie przed nim samym.
+0Niestety umrze on podczas proby zjedzenia bariery oraz samego siebie.
+0Celem rozgrywki jest zdobycie jak najwiekszej ilosci punktow. Punkty mozna zdobyc
+0poprzez zjedzenie:
+0'+' - karmy - 50 pkt przemnozone przez wspolczynnik trudnosci
+0'@' - dietetycznej karmy - natychmiastowe 200 pkt niezaleznie od poziomu wspolczynnika trudnosci
+0'$' - gotowki - natychmiastowe 500 pkt niezaleznie od wspolczynnika trudnosci
+0Uwaga! Czesc jadalnych elementow posiada dodatkowe efekty:
+0'+' - karma - zwieksza rozmiar weza o 1 punkt 
 ~
 0GAME RULES
 0
 1Back
 0
-0Gra jest odzwierciedleniem popularnej produkcji "snake". 
-0Celem gry jest utrzymanie sie jak najdluzej przy zyciu, 
-0w czasie gdy poruszane przez nas waz rosnie.
+0The game reflects popular game entitled "Snake".
+0In the game we have to move our snake, which eats everything, what appears
+0in front of it. Unfortunately, the snake will die, if it try to eat a barrier or itself.
+0The main goal of the game is to score most points. Points the player can score by eating:
+0'+' - feed - 50 points multiply difficulty rate
+0'@' - dietetic feed - immediate 200 points discretely difficulty level
+0'$' - cash - immediate 500 points discretely difficulty level
+0Attention! Some of the edible elements has extra bonuses:
+0'+' - feed - increase the size of the snake by 1 point

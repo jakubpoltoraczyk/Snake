@@ -13,7 +13,7 @@ int main()
     Menu main_menu("menu_dir/main_menu.txt"), opt_menu("menu_dir/optional_menu.txt");
     Color_menu speed_menu("menu_dir/speed_menu.txt"), map_menu("menu_dir/map_menu.txt"), lang_menu("menu_dir/lang_menu.txt");
     Info_menu rules_menu("menu_dir/rules_menu.txt"), author_menu("menu_dir/author_menu.txt");
-    Snake snake(1);
+    Snake snake;
     int option, map_size;
     do
     {
@@ -40,7 +40,7 @@ int main()
                     case KEY_RIGHT:
                         option = snake.move(KEY_RIGHT); break;
                     case 'e':
-                        option = 'e'; break;
+                        option = snake.move('e'); break;
                     default:
                         option = snake.move(option);
                 }
@@ -71,6 +71,8 @@ int main()
                     {
                         map_menu.show();
                         option = map_menu.choose_option(getch());
+                        if(option>=3&&option<=5)
+                            snake.change_map_size(Snake::Map_size(option));
                     }while(option!=1); option = 0; break;
                     case 5:
                     do
