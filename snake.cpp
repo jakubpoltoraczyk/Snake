@@ -1,6 +1,6 @@
 #include "snake.h"
 
-Snake::Snake(const Map_size & ms): tab(max_size), added_food(), counter(), map_size(ms), result_message("menu_dir/info_snake_result.txt"), points()
+Snake::Snake(const Map_size & ms): tab(max_size), added_food(), counter(), map_size(ms), result_message("menu_dir/info_snake_result.txt"), points(), game_speed(medium_s)
 {
     srand(time(NULL));
     for(int i=0;i<max_size;++i)
@@ -191,7 +191,7 @@ void Snake::change_map_size(const Map_size & ms)
 
 int Snake::look_for_tail()const
 {
-    int c[2];
+    int c[4];
     int counter = 0;
     if(tab[x2-1][y2]==2)
         c[counter++] = KEY_UP;
@@ -201,8 +201,9 @@ int Snake::look_for_tail()const
         c[counter++] = KEY_LEFT;
     if(tab[x2][y2+1]==2)
         c[counter++] = KEY_RIGHT;
-    if(counter>1)
+    switch(counter)
     {
+        case 2:
         if((c[0]==KEY_UP||c[1]==KEY_UP)&&x1>x2+1)
             return KEY_UP;
         if((c[0]==KEY_DOWN||c[1]==KEY_DOWN)&&x1<x2-1)
@@ -211,9 +212,9 @@ int Snake::look_for_tail()const
             return KEY_LEFT;
         if((c[0]==KEY_RIGHT||c[1]==KEY_RIGHT)&&y1<y2-1)
             return KEY_RIGHT;
-    }
-    else
+        default:
         return c[0];
+    }
 }
 
 void Snake::move_tail(int c)
@@ -299,5 +300,40 @@ int Snake::get_result_points()
         case big:
         added_food*=1; break;
     }
+    switch(game_speed)
+    {
+        case small:
+        added_food*=1; break;
+        case medium_s:
+        added_food*=2; break;
+        case fast:
+        added_food*=3; break;
+    }
     return points+added_food*50;
+}
+
+void Snake::change_game_speed(const Game_speed & gs)
+{
+    switch(gs)
+    {
+        case slow:
+            game_speed = slow; break;
+        case medium:
+            game_speed = medium_s; break;
+        case fast:
+            game_speed = fast; break;
+    }
+}
+
+int Snake::get_game_speed()const
+{
+    switch(game_speed)
+    {
+        case slow:
+            return 600;
+        case medium_s:
+            return 400;
+        case fast:
+            return 200;
+    }
 }

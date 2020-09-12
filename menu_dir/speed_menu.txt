@@ -1,13 +1,13 @@
-0TEMPO GRY (wkrotce)
+0TEMPO GRY
 0
-3Wolne (x0)
-4Srednie (x0)
-5Szybkie (x0)
+3Wolne (x1)
+4Srednie (x2)
+5Szybkie (x3)
 1Powrot
 ~
-0Game speed (soon) 
+0Game speed
 0
-3Slow (x0)
-4Medium (x0)
-5Fast (x0)
+3Slow (x1)
+4Medium (x2)
+5Fast (x3)
 1Back

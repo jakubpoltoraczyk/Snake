@@ -1,3 +1,5 @@
+/* Gra "Snake" wersja 1.0 demo */
+
 #include "menu.h"
 #include "color_menu.h"
 #include "info_menu.h"
@@ -14,11 +16,12 @@ int main()
     Color_menu speed_menu("menu_dir/speed_menu.txt"), map_menu("menu_dir/map_menu.txt"), lang_menu("menu_dir/lang_menu.txt");
     Info_menu rules_menu("menu_dir/rules_menu.txt"), author_menu("menu_dir/author_menu.txt");
     Snake snake;
-    int option, map_size;
+    int option, speed;
     do
     {
         main_menu.show();
         option = main_menu.choose_option(getch());
+        speed = snake.get_game_speed();
         switch(option)
         {
             case 2:
@@ -44,7 +47,7 @@ int main()
                     default:
                         option = snake.move(option);
                 }
-                napms(300);
+                napms(speed);
             }while(option!='e'); option = 0;
             nodelay(stdscr,FALSE); break;
             case 3:
@@ -65,6 +68,8 @@ int main()
                     {
                         speed_menu.show();
                         option = speed_menu.choose_option(getch());
+                        if(option>=3&&option<=5)
+                            snake.change_game_speed(Snake::Game_speed(option));
                     }while(option!=1); option = 0; break;
                     case 4:
                     do
