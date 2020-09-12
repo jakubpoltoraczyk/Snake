@@ -1,3 +1,5 @@
+/* Gra "Snake" wersja 1.0 */
+
 #include "color_menu.h"
 
 void Color_menu::show()const

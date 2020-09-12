@@ -1,3 +1,5 @@
+/* Gra "Snake" wersja 1.0 */
+
 #include "snake.h"
 
 Snake::Snake(const Map_size & ms): tab(max_size), added_food(), counter(), map_size(ms), result_message("menu_dir/info_snake_result.txt"), points(), game_speed(medium_s), tail_number(999)
@@ -239,7 +241,7 @@ int Snake::next_step(int c)const
 void Snake::add_element()
 {
     int draw_x_number, draw_y_number, draw_number;
-    if(counter%10==0||counter==1)
+    if(counter%15==0||counter==1)
     {
         do
         {

@@ -1,4 +1,4 @@
-#Makefile dla programu "Snake"
+#Makefile dla programu "Snake wersja 1.0"
 
 all: snake clean
 

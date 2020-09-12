@@ -1,3 +1,5 @@
+/* Gra "Snake" wersja 1.0 */
+
 /* Klasa reprezentujaca proste menu gry wykorzystujace biblioteke ncurses. Umozliwia ona wyswietlenie tekstu menu otoczonego stala ramka
    na srodku ekranu, podswietlenie aktualnie wybranej pozycji w menu, przesuwanie sie pomiedzy dostepnymi pozycjami i wybor danej opcji */
 

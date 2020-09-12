@@ -17,10 +17,10 @@
 0
 1Back
 0
-0The game reflects popular game entitled "Snake".
+0The game reflects popular production entitled "Snake".
 0In the game we have to move our snake, which eats everything, what appears
 0in front of it. Unfortunately, the snake will die, if it try to eat a barrier or itself.
-0The main goal of the game is to score most points. Points the player can score by eating:
+0The main goal of the game is to score most points. Player can score points by eating:
 0'+' - feed - 50 points multiply difficulty rate
 0'@' - dietetic feed - immediate 200 points discretely difficulty level
 0'$' - cash - immediate 500 points discretely difficulty level

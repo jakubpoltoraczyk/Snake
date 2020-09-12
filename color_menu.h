@@ -1,3 +1,5 @@
+/* Gra "Snake" wersja 1.0 */
+
 /* Klasa reprezentujaca proste kolorowe menu gry wykorzystujace biblioteke ncurses. Oprocz mozliwosci dziedziczonych po klasie 'Menu',
    klasa ta udostepnia kolorowanie wybranych przez uzytkownika opcji na zielono, niewybranych na czerowno oraz zmiane aktualnie wybranej opcji */
 

@@ -1,3 +1,5 @@
+/* Gra "Snake" wersja 1.0 */
+
 #include "menu.h"
 
 Language Menu::lang = POL;

@@ -1,3 +1,5 @@
+/* Gra "Snake" wersja 1.0 */
+
 /* Klasa reprezentujaca proste menu informacyjne z wykorzystaniem biblioteki ncurses. Ogranicza ona korzysci wynikajace z dziedziczenia 
    po klasie 'Menu', udostepniajac jedynie opcje powrotu do poprzedniej strony menu. Wyswietla tekst o charakterze informacyjnym w ramce o zmiennej wielkosci */
 

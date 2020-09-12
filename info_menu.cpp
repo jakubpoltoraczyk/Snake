@@ -1,3 +1,5 @@
+/* Gra "Snake" wersja 1.0 */
+
 #include "info_menu.h"
 
 Info_menu::Info_menu(const std::string & filename): Menu(filename), lngst_name(number_of_languages)

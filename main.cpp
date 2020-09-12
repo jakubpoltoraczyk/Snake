@@ -1,4 +1,4 @@
-/* Gra "Snake" wersja 1.0 demo */
+/* Gra "Snake" wersja 1.0 */
 
 #include "menu.h"
 #include "color_menu.h"
