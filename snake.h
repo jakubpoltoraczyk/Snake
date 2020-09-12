@@ -22,6 +22,7 @@ class Snake
         const static int max_size = 40;
         int lines, columns; 
         int x_size, y_size, x1, x2, y1, y2;
+        int tail_number;
         std::vector<std::vector<int>> tab;
         int added_food, counter, points;
         enum Map_size map_size;

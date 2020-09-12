@@ -1,6 +1,6 @@
 #include "snake.h"
 
-Snake::Snake(const Map_size & ms): tab(max_size), added_food(), counter(), map_size(ms), result_message("menu_dir/info_snake_result.txt"), points(), game_speed(medium_s)
+Snake::Snake(const Map_size & ms): tab(max_size), added_food(), counter(), map_size(ms), result_message("menu_dir/info_snake_result.txt"), points(), game_speed(medium_s), tail_number(999)
 {
     srand(time(NULL));
     for(int i=0;i<max_size;++i)
@@ -27,11 +27,7 @@ void Snake::show()const
                 case 1: 
                 attron(COLOR_PAIR(1));
                 mvprintw(lines/2+i,columns/2+j,"o");
-                attroff(COLOR_PAIR(1)); break;
-                case 2: 
-                attron(COLOR_PAIR(1));
-                mvprintw(lines/2+i,columns/2+j,"-");
-                attroff(COLOR_PAIR(1)); break;
+                attroff(COLOR_PAIR(1)); break; 
                 case 3:
                 mvhline(lines/2+i,columns/2+j,ACS_HLINE,1); break;
                 case 4:
@@ -58,7 +54,10 @@ void Snake::show()const
                 attron(COLOR_PAIR(4));
                 mvprintw(lines/2+i,columns/2+j,"$");
                 attroff(COLOR_PAIR(4)); break;
-
+                default:
+                attron(COLOR_PAIR(1));
+                mvprintw(lines/2+i,columns/2+j,"-");
+                attroff(COLOR_PAIR(1));
             }
         }
 }
@@ -72,7 +71,7 @@ int Snake::move(int c)
     {
         case KEY_UP:
         next_element = next_step(KEY_UP);
-        if(next_element<2||next_element>5)
+        if((next_element<2||next_element>5)&&next_element<10)
         {
             if(next_element==7)
                 points+=200;
@@ -82,7 +81,7 @@ int Snake::move(int c)
                 move_tail(look_for_tail());
             else
                 ++added_food;
-            tab[x1][y1] = 2;
+            tab[x1][y1] = tail_number-added_food-1;
             tab[--x1][y1] = 1;
             return c;
         }
@@ -90,7 +89,7 @@ int Snake::move(int c)
         return 'e';
         case KEY_DOWN:
         next_element = next_step(KEY_DOWN);
-        if(next_element<2||next_element>5)
+        if((next_element<2||next_element>5)&&next_element<10)
         {
             if(next_element==7)
                 points+=200;
@@ -100,7 +99,7 @@ int Snake::move(int c)
                 move_tail(look_for_tail());
             else
                 ++added_food;
-            tab[x1][y1] = 2;
+            tab[x1][y1] = tail_number-added_food-1;
             tab[++x1][y1] = 1;  
             return c;
         }
@@ -108,7 +107,7 @@ int Snake::move(int c)
         return 'e';
         case KEY_LEFT:
         next_element = next_step(KEY_LEFT);
-        if(next_element<2||next_element>5)
+        if((next_element<2||next_element>5)&&next_element<10)
         {
             if(next_element==7)
                 points+=200;
@@ -118,7 +117,7 @@ int Snake::move(int c)
                 move_tail(look_for_tail());
             else
                 ++added_food;
-            tab[x1][y1] = 2;
+            tab[x1][y1] = tail_number-added_food-1;
             tab[x1][--y1] = 1;
             return c;
         }
@@ -126,7 +125,7 @@ int Snake::move(int c)
         return 'e';
         case KEY_RIGHT:
         next_element = next_step(KEY_RIGHT);
-        if(next_element<2||next_element>5)
+        if((next_element<2||next_element>5)&&next_element<10)
         {
             if(next_element==7)
                 points+=200;
@@ -136,7 +135,7 @@ int Snake::move(int c)
                 move_tail(look_for_tail());
             else
                 ++added_food;
-            tab[x1][y1] = 2;
+            tab[x1][y1] = tail_number-added_food-1;
             tab[x1][++y1] = 1;
             return c;
         }
@@ -183,7 +182,8 @@ void Snake::change_map_size(const Map_size & ms)
     y1 = y_size/2;
     y2 = y1 + 2;
     tab[x1][y1] = 1;
-    tab[x1][y1+1] = tab[x1][y2] = 2;
+    tab[x1][y2] = tail_number;
+    tab[x1][y1+1] = tail_number-1;
     getmaxyx(stdscr,lines,columns);
     lines-=x_size;
     columns-=y_size;
@@ -191,30 +191,14 @@ void Snake::change_map_size(const Map_size & ms)
 
 int Snake::look_for_tail()const
 {
-    int c[4];
-    int counter = 0;
-    if(tab[x2-1][y2]==2)
-        c[counter++] = KEY_UP;
-    if(tab[x2+1][y2]==2)
-        c[counter++] = KEY_DOWN;
-    if(tab[x2][y2-1]==2)
-        c[counter++] = KEY_LEFT;
-    if(tab[x2][y2+1]==2)
-        c[counter++] = KEY_RIGHT;
-    switch(counter)
-    {
-        case 2:
-        if((c[0]==KEY_UP||c[1]==KEY_UP)&&x1>x2+1)
-            return KEY_UP;
-        if((c[0]==KEY_DOWN||c[1]==KEY_DOWN)&&x1<x2-1)
-            return KEY_DOWN;
-        if((c[0]==KEY_LEFT||c[1]==KEY_LEFT)&&y1>y2+1)
-            return KEY_LEFT;
-        if((c[0]==KEY_RIGHT||c[1]==KEY_RIGHT)&&y1<y2-1)
-            return KEY_RIGHT;
-        default:
-        return c[0];
-    }
+    if(tab[x2-1][y2]==tail_number-1)
+        return KEY_UP;
+    if(tab[x2+1][y2]==tail_number-1)
+        return KEY_DOWN;
+    if(tab[x2][y2-1]==tail_number-1)
+        return KEY_LEFT;
+    if(tab[x2][y2+1]==tail_number-1)
+        return KEY_RIGHT;
 }
 
 void Snake::move_tail(int c)
@@ -223,16 +207,16 @@ void Snake::move_tail(int c)
     {
         case KEY_UP:
         tab[x2][y2] = 0;
-        tab[--x2][y2] = 2; break;
+        tab[--x2][y2] = --tail_number; break;
         case KEY_DOWN:
         tab[x2][y2] = 0;
-        tab[++x2][y2] = 2; break;
+        tab[++x2][y2] = --tail_number; break;
         case KEY_LEFT:
         tab[x2][y2] = 0;
-        tab[x2][--y2] = 2; break;
+        tab[x2][--y2] = --tail_number; break;
         case KEY_RIGHT:
         tab[x2][y2] = 0;
-        tab[x2][++y2] = 2; break;
+        tab[x2][++y2] = --tail_number; break;
     } 
 }
 
